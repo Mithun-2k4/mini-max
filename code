@@ -1,0 +1,46 @@
+int main() {
+    int n;
+    int a[100];
+    int temp;
+    int s,d;
+    printf("enter the number of input ");
+   
+    scanf("%d",&n);
+   
+    printf("enter the number of minimum ");
+    scanf("%d",&s);
+    printf("enter the number of maximum ");
+    scanf("%d",&d);
+     printf("enter the numbers ");
+   
+    for (int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for (int i=0;i<n-1;i++)
+    {
+        for (int j=0;j<n-i-1;j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+   
+     for (int i=0;i<s;i++)
+    {
+        printf("min%d:%d",i+1,a[i]);
+        printf("\n");
+    }
+    for (int i=n-1;i>=n-d;i--)
+    {
+        printf("max%d:%d",n-i,a[i]);
+        printf("\n");
+    }
+ 
+   
+    return 0;
+}
